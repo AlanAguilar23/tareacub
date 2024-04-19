@@ -1,0 +1,118 @@
+.navbar{
+
+background-color: black;
+
+}
+
+
+@media only screen and (max-width: 1000px) {
+    
+
+    .navbar{
+
+
+        background-color: rgb(17, 121, 158);
+        color: black;
+        
+        
+        }
+
+    h1{
+        color: rgb(124, 0, 0);
+    }
+
+    body{
+        background: rgb(135, 170, 134);
+    }
+
+    .input-group-text{
+        background: rgb(243, 90, 92);
+        color: rgb(189, 149, 248);
+    }
+
+    .btn{
+        background-color: rgb(105, 44, 44);
+        color:rgb(255, 242, 218);
+    }
+
+    .form-control{
+        background: rgb(149, 161, 165);
+    }
+
+    label{
+        color:rgb(0, 8, 255);
+    }
+
+    .form-text{
+        color:rgb(48, 44, 18);
+    }
+
+    .accordion-button{
+        background: rgb(190, 141, 107);
+        color: rgb(4, 101, 4);
+    }
+
+    .accordion-body{
+        background-color: rgb(187, 47, 0);
+    }
+    
+
+}
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    
+
+    .navbar{
+
+
+        background-color: red;
+        color: black;
+        
+        
+        }
+
+    h1{
+        color: rgb(255, 168, 110);
+    }
+
+    body{
+        background: rgb(4, 101, 3);
+    }
+
+    .input-group-text{
+        background: blue;
+        color: gold;
+    }
+
+    .btn{
+        background-color: rgb(255, 19, 19);
+        color:orange;
+    }
+
+    .form-control{
+        background: deepskyblue;
+    }
+
+    label{
+        color:gold;
+    }
+
+    .form-text{
+        color:gold;
+    }
+
+    .accordion-button{
+        background: chocolate;
+    }
+
+    .accordion-body{
+        background-color: darksalmon;
+    }
+    
+
+}

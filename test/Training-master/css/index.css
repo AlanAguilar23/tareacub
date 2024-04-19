@@ -1,0 +1,72 @@
+
+.background{
+
+
+background-color: black;
+color: white;
+height: 100vh;
+
+}
+
+h1{
+
+    text-align: center;
+
+}
+
+#bienvenido{
+
+    text-align: left;
+
+}
+
+
+
+.contenedor{
+
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr); /*2 columnas con tamaño igual*/
+
+    grid-gap: 10px; /*espacio entre seldas de 10px*/
+
+}
+
+.contenido-grid{
+
+    background-color: #ddd;
+    padding: 3%;
+    text-align: center;
+
+
+}
+
+
+@media only screen and (max-width:1440px) {
+    
+
+    .background{
+
+
+        background-color: yellow;
+        color: black;
+        height: 100vh;
+        
+        }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+
+    .background{
+
+
+        background-color: red;
+        color: black;
+        height: 100vh;
+        
+        }
+
+}

@@ -1,0 +1,39 @@
+.mt{
+    font-size: 50px;
+    text-align: center;
+}
+
+.t{
+    text-align: center;
+}
+.input1{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #c8bebe;
+}
+
+.bt{
+    border-color: red;
+    color: red;
+}
+
+.imagen{
+    width: 50px;
+    margin-left: 10px;
+}
+
+footer{
+    width: 100%;
+    position: absolute;
+    padding: 2rem 8%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.co{
+    color: white;
+}
+
