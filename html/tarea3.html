@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ubicación</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../js/jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+        <div id="area-nav">
+            <button id="ubi">CLICK</button>
+        </div>
+    </body>
+    <script>
+        $("#ubi").click(function () {
+                if (!!navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                            function (position) {
+                                window.alert("Latitud: " + position.coords.latitude + "  Longitud: " + position.coords.longitude);
+                            },
+                            function () {
+                                window.alert("Peticición de la ubicación denegada.");
+                            }
+                    );
+                }
+            });
+
+
+
+    </script>
+
+
+</html>
