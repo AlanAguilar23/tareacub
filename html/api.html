@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api</title>
+</head>
+
+<body>
+    <h1>Hola, estamos aprendiendo apis</h1> <br>
+    <p id="nombreA"></p>
+</body>
+
+<script>
+
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+
+    fetch("https://rickandmortyapi.com/api/character", requestOptions)
+        .then(response => response.json())
+        .then(data => {
+
+            const personajes = data.results;
+
+            const contendedor = document.getElementById("nombreA");
+
+            personajes.forEach(individuo => {
+
+                const characterContainer = document.createElement('div');
+                characterContainer.classList.add('character');
+
+                const imageElement = document.createElement('img');
+                imageElement.src = individuo.image;
+                imageElement.alt = individuo.name;
+                imageElement.style.width = '200px';
+                imageElement.style.height = '200px';
+
+                const nameElement = document.createElement('h1');
+                nameElement.textContent = individuo.name;
+
+                const statusElement = document.createElement('h1');
+                statusElement.textContent = individuo.status;
+               
+                if(statusElement.textContent == 'Alive'){
+                    statusElement.style.color = '#00FF17';
+
+                }else if(statusElement.textContent == 'Dead'){
+                    statusElement.style.color = '#FF0000';
+
+                }else if(statusElement.textContent == 'unknown'){
+                    statusElement.style.color = '#B8B8B8';
+                }
+
+            
+
+                
+                characterContainer.appendChild(imageElement);
+                characterContainer.appendChild(nameElement);
+                characterContainer.appendChild(statusElement);
+
+                contendedor.appendChild(characterContainer);
+
+
+            });
+
+
+
+
+        })
+        .catch(error => console.log('error', error));
+
+</script>
+
+</html>
