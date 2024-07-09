@@ -39,7 +39,7 @@
         const startDate = document.getElementById('start-date').value;
         const endDate = document.getElementById('end-date').value; 
        
-        const apiUrl = `https://api.nasa.gov/planetary/apod?start_date=${startDate}&end_date=${endDate}&api_key=;<--Colocar la apikey-->
+        const apiUrl = `https://api.nasa.gov/planetary/apod?start_date=${startDate}&end_date=${endDate}&api_key=;<!--Colocar la apikey-->
 
         fetch(apiUrl)
             .then(response => response.json())
