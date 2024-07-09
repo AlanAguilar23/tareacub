@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/apinasa2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Imágenes de la NASA</title>
+</head>
+<body>
+
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="fw-light">Imagenes de la NASA</h1>
+                    
+                    <label for="start-date">Fecha de inicio:</label>
+                    <input type="date" id="start-date" >
+                    
+                    <label for="end-date">Fecha de fin:</label>
+                    <input type="date" id="end-date">
+
+                    <button onclick="fetchImages()">Obtener imágenes</button>
+                    <div id="images-container"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+<script>
+    function fetchImages() {
+        const startDate = document.getElementById('start-date').value;
+        const endDate = document.getElementById('end-date').value; 
+       
+        const apiUrl = `https://api.nasa.gov/planetary/apod?start_date=${startDate}&end_date=${endDate}&api_key=0lnI7Kfe9YXYhWQcJG5vSCjc1wiyjH9RgbjvQ5mJ`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const imagesContainer = document.getElementById('images-container');
+                imagesContainer.innerHTML = ''; 
+
+                if (Array.isArray(data)) {
+                    data.forEach(day => {
+                        const imgElement = document.createElement('img');
+                        imgElement.src = day.url;
+                        imgElement.alt = day.title;
+                        imagesContainer.appendChild(imgElement);
+                    });
+                } else {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = data.url;
+                    imgElement.alt = data.title;
+                    imagesContainer.appendChild(imgElement);
+                }
+            })
+            .catch(error => {
+                console.error('Error al obtener imágenes:', error);
+            });
+    }
+</script>
+
+</html>
